@@ -40,9 +40,9 @@ class _MyRestaurantState extends State<MyRestaurant> {
         ),
       ),
       backgroundColor: Colors.black,
-      drawer: Drawer(
-        child: Text("HELLO!!"),
-      ),
+      // drawer: Drawer(
+      //   child: Text("HELLO!!"),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

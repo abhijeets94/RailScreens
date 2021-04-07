@@ -187,26 +187,7 @@ class _RestaurantDetailsFilledState extends State<RestaurantDetailsFilled> {
                 ],
               ),
             ),
-            DashedSeperator(
-              color: Color(0xffc2c2c0),
-              height: 1.25,
-            ),
-            Container(
-              margin: EdgeInsets.all(10.0),
-              child: Text(
-                "Restaurant Info",
-                style: TextStyle(
-                    color: const Color(0xfff06b6c),
-                    fontWeight: FontWeight.w500,
-                    fontFamily: "Roboto",
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16.0),
-              ),
-            ),
-            DashedSeperator(
-              color: Color(0xffc2c2c0),
-              height: 1.25,
-            ),
+            MyRestaurantHeader("Restaurant Info"),
             Container(
               margin: EdgeInsets.all(15.0),
               child: Column(
@@ -258,26 +239,7 @@ class _RestaurantDetailsFilledState extends State<RestaurantDetailsFilled> {
                 ],
               ),
             ),
-            DashedSeperator(
-              color: Color(0xffc2c2c0),
-              height: 1.25,
-            ),
-            Container(
-              margin: EdgeInsets.all(10.0),
-              child: Text(
-                "Bank Details",
-                style: TextStyle(
-                    color: const Color(0xfff06b6c),
-                    fontWeight: FontWeight.w500,
-                    fontFamily: "Roboto",
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16.0),
-              ),
-            ),
-            DashedSeperator(
-              color: Color(0xffc2c2c0),
-              height: 1.25,
-            ),
+            MyRestaurantHeader("Bank Details"),
             Container(
               margin: EdgeInsets.all(15.0),
               child: Column(
@@ -298,6 +260,108 @@ class _RestaurantDetailsFilledState extends State<RestaurantDetailsFilled> {
                     userTag: "IFSC Code",
                     userDetail: "ICIC6483902",
                   ),
+                ],
+              ),
+            ),
+            MyRestaurantHeader("Tax & Other Informations"),
+            Container(
+              margin: EdgeInsets.all(15.0),
+              child: Column(
+                children: [
+                  OrderInfo(
+                    userTag: "Order Taker's Name",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Order Taker's Contact No (1st)",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Order Taker's Contact No (2nd)",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Manager No",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Manager No",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Complaint Whatsapp No",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Billing Name",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Billing Contact No",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Billing Alt Contact No",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Store E-Mail Id",
+                    userDetail: "",
+                  ),
+                  OrderInfo(
+                    userTag: "Commission Detail(Retail)",
+                    userDetail: "",
+                  ),
+                  Stack(
+                    children: [
+                      OrderInfo(
+                        userTag: "Commision Details(Bulk)",
+                        userDetail: "",
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, top: 35.0),
+                        child: Text(
+                          "(2000-5000)",
+                          style: const TextStyle(
+                              color: const Color(0xff3a9f7b),
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Roboto",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 8.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Stack(
+                    children: [
+                      OrderInfo(
+                        userTag: "Commision Details(Bulk)",
+                        userDetail: "",
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, top: 35.0),
+                        child: Text(
+                          "(5000-10000 & above)",
+                          style: const TextStyle(
+                              color: const Color(0xff3a9f7b),
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Roboto",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 8.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            MyRestaurantHeader("Timing & Other Details"),
+            Container(
+              child: Column(
+                children: [
+                  OrderInfo(
+                    userTag: "Order Before Timing (Retail Order)",
+                  )
                 ],
               ),
             ),
@@ -408,6 +472,39 @@ class _RestaurantDetailsFilledState extends State<RestaurantDetailsFilled> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyRestaurantHeader extends StatelessWidget {
+  final String headerName;
+  MyRestaurantHeader(this.headerName);
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        DashedSeperator(
+          color: Color(0xffc2c2c0),
+          height: 1.25,
+        ),
+        Container(
+          margin: EdgeInsets.all(10.0),
+          child: Text(
+            headerName,
+            style: TextStyle(
+                color: const Color(0xfff06b6c),
+                fontWeight: FontWeight.w500,
+                fontFamily: "Roboto",
+                fontStyle: FontStyle.normal,
+                fontSize: 16.0),
+          ),
+        ),
+        DashedSeperator(
+          color: Color(0xffc2c2c0),
+          height: 1.25,
+        ),
+      ],
     );
   }
 }
